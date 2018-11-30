@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content padding>
+  <button ion-button full (click)="getCompanies()">ATUALIZAR</button>
   <ul>
     <li *ngFor="let item of companies; let i = index">
       <p>Nome: {{item.name}}</p>

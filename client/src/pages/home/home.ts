@@ -17,7 +17,6 @@ export class HomePage {
   getCompanies() {
     this.socket.NewData().subscribe(data => {
       this.companies = data
-      console.log('asdlfjkaslçdfçasdfjçlsdaf', this.companies)
     })
   }
 }

@@ -8,28 +8,25 @@ import { SocketProvider } from '../../providers/socket/socket';
 })
 export class ContactPage {
 
-  companies: any = [];
+  companies: any = [
+    { 'id': 0, 'name': 'Ducks Sports', 'value': 16 },
+    { 'id': 1, 'name': 'Samsung', 'value': 12 },
+    { 'id': 2, 'name': 'Bar do satan', 'value': 25 },
+    { 'id': 3, 'name': 'Nike', 'value': 20 },
+    { 'id': 4, 'name': 'Google', 'value': 21 }
+  ];
 
   constructor(public socket: SocketProvider, public navCtrl: NavController) {
     this.getCompanies()
   }
 
   ionViewDidLoad() {
-    this.updateCompany([
-      { 'id': 0, 'name': 'Ducks Sports', 'value': 16 },
-      { 'id': 1, 'name': 'Samsung', 'value': 12 },
-      { 'id': 2, 'name': 'Bar do satan', 'value': 25 },
-      { 'id': 3, 'name': 'Nike', 'value': 20 },
-      { 'id': 4, 'name': 'Google', 'value': 21 }
-    ])
-
     this.getCompanies()
   }
 
   getCompanies() {
     this.socket.NewData().subscribe(data => {
       this.companies = data
-      console.log('asdlfjkaslçdfçasdfjçlsdaf', this.companies)
     })
   }
 
@@ -37,6 +34,7 @@ export class ContactPage {
     if (updateData) {
       this.socket.UpdateCompanies(updateData)
     } else {
+      console.log('--->', this.companies)
       this.socket.UpdateCompanies(this.companies)
     }
   }

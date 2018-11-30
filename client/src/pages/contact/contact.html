@@ -7,17 +7,57 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let item of companies; let i = index">
+  <ion-list>
     <ion-item>
-      <ion-label floating>Nome</ion-label>
-      <ion-input type="text" [ngModel]="item.name"></ion-input>
+      <ion-label floating>Empresa 1</ion-label>
+      <ion-input type="text" [ngModel]="companies[0].name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Valor</ion-label>
-      <ion-input type="number" [ngModel]="item.value"></ion-input>
+      <ion-label floating>Valor Empresa 1</ion-label>
+      <ion-input type="number" [ngModel]="companies[0].value"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Empresa 2</ion-label>
+      <ion-input type="text" [ngModel]="companies[1].name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Valor Empresa 2</ion-label>
+      <ion-input type="number" [ngModel]="companies[1].value"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Empresa 3</ion-label>
+      <ion-input type="text" [ngModel]="companies[2].name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Valor Empresa 3</ion-label>
+      <ion-input type="number" [ngModel]="companies[2].value"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Empresa 4</ion-label>
+      <ion-input type="text" [ngModel]="companies[3].name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Valor Empresa 4</ion-label>
+      <ion-input type="number" [ngModel]="companies[3].value"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Empresa 5</ion-label>
+      <ion-input type="text" [ngModel]="companies[4].name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Valor Empresa 5</ion-label>
+      <ion-input type="number" [ngModel]="companies[4].value"></ion-input>
     </ion-item>
   </ion-list>
 
-  <button ion-button full (click)="updateCompany(companies)">ENVIAR NOVOS DADOS</button>
+  <button ion-button full (click)="updateCompany()">ENVIAR NOVOS DADOS</button>
 </ion-content>
