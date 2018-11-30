@@ -9,15 +9,15 @@
 <ion-content>
   <ion-list *ngFor="let item of companies; let i = index">
     <ion-item>
-      <ion-label fixed>Nome</ion-label>
+      <ion-label floating>Nome</ion-label>
       <ion-input type="text" [ngModel]="item.name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>Valor</ion-label>
+      <ion-label floating>Valor</ion-label>
       <ion-input type="number" [ngModel]="item.value"></ion-input>
     </ion-item>
   </ion-list>
 
-  <button ion-button (click)="updateCompany()">ENVIAR</button>
+  <button ion-button full (click)="updateCompany(companies)">ENVIAR NOVOS DADOS</button>
 </ion-content>

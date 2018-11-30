@@ -75,7 +75,7 @@ io.on('connection', (socket) => {
         if (item.id === element.id) {
           item.value = element.value
 
-          dataReturn.push({'name': item.name, 'value': item.value})
+          dataReturn.push({'name': item.name || element.name, 'value': item.value || element.value})
         }
       })
     })
