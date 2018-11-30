@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Empresas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let item of companies; let i = index">
+    <ion-item>
+      <ion-label fixed>Nome</ion-label>
+      <ion-input type="text" [ngModel]="item.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Valor</ion-label>
+      <ion-input type="number" [ngModel]="item.value"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="updateCompany()">ENVIAR</button>
+</ion-content>
