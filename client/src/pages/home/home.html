@@ -4,12 +4,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <button ion-button full (click)="getCompanies()">ATUALIZAR</button>
+<ion-content>
   <ul>
     <li *ngFor="let item of companies; let i = index">
-      <p>Nome: {{item.name}}</p>
-      <p>Valor: {{item.value}}</p>
+      <p><strong>Nome: </strong>{{item.name}}</p>
+      <p><strong>Valor: </strong>{{item.value}}</p>
     </li>
   </ul>
 </ion-content>

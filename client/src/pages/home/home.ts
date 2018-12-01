@@ -10,13 +10,20 @@ export class HomePage {
 
   public companies: any = [];
 
-  constructor(public socket: SocketProvider, public navCtrl: NavController) {
+  constructor(public socket: SocketProvider, public navCtrl: NavController) { }
+
+  ionViewDidLoad() {
     this.getCompanies()
+    this.GetDataCompanies()
   }
 
   getCompanies() {
     this.socket.NewData().subscribe(data => {
       this.companies = data
     })
+  }
+
+  GetDataCompanies() {
+    this.socket.GetData()
   }
 }

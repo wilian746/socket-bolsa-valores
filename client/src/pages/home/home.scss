@@ -1,3 +1,7 @@
 page-home {
-
+  ul { padding: 0 10px;
+    li { margin: 20px 0; border: 1px dashed #000; list-style: none;
+      p { text-align: center; }
+    }
+  }
 }

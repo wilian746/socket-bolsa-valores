@@ -69,7 +69,6 @@ io.on('connection', (socket) => {
 
   socket.on('UpdateCompanies', (data) => {
     let dataReturn = []
-    console.log('--->', data)
 
     if (data.length > 0) {
       companies.data.forEach((item) => {
@@ -77,7 +76,7 @@ io.on('connection', (socket) => {
           if (item.id === element.id) {
             item.value = element.value
 
-            dataReturn.push({'name': item.name || element.name, 'value': item.value || element.value})
+            dataReturn.push({'id': item.id || element.id, 'name': item.name || element.name, 'value': item.value || element.value})
           }
         })
       })
@@ -86,6 +85,7 @@ io.on('connection', (socket) => {
     }
 
     companies.data = dataReturn
+
     companies.emit('NewData', dataReturn)
   })
 
